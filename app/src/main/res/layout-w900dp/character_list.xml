@@ -21,8 +21,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android" >
 
         <android.support.v7.widget.SearchView
-            android:id="@+id/searchTv"
-            android:hint="@string/search_hint"
+            android:id="@+id/search_bar"
             android:background="@drawable/border"
             android:layout_width="match_parent"
             android:textAlignment="center"
@@ -38,7 +37,7 @@
             />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -46,7 +45,7 @@
             android:weightSum="100">
 
             <TextView
-                android:id="@+id/messageTv"
+                android:id="@+id/error_message"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
@@ -57,7 +56,7 @@
                 android:textSize="36sp" />
 
             <ImageView
-                android:id="@+id/searchIv"
+                android:id="@+id/search_image_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="top"

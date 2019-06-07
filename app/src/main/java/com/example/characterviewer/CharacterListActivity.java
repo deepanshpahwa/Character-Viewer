@@ -45,8 +45,8 @@ public class CharacterListActivity extends AppCompatActivity {
     final CharacterListActivity ref = this;
     RecyclerView recyclerView;
     ArrayList<RelatedTopic> filteredList;
-    String searchQuery;
     android.support.v7.widget.SearchView searchView;
+    String searchQuery;
 
 
     @Override
@@ -59,32 +59,34 @@ public class CharacterListActivity extends AppCompatActivity {
         toolbar.setTitle(getTitle());
         toolbar.setBackgroundColor(getResources().getColor(R.color.colorAccent));
 
-        searchView = findViewById(R.id.searchTv);
+        searchView = findViewById(R.id.search_bar);
         recyclerView = findViewById(R.id.character_list);
         assert recyclerView != null;
+        searchQuery="";
 
-        final LinearLayout layout = findViewById(R.id.linearLayout);
-        final TextView textView = findViewById(R.id.messageTv);
+        final LinearLayout layout = findViewById(R.id.linear_layout);
+        final TextView messageTv = findViewById(R.id.error_message);
 
+        searchView.setQueryHint(getResources().getString(R.string.search_hint));
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 searchView.setIconified(false);
                 /**
-                 * This brings the searchbar into focus and allows tying in of query
+                 * This allows the whole searchbar into focus for typing in of query
                  */
             }
         });
         searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                onQueryFromSearchBar(query, layout, textView);
+                onQueryFromSearchBar(query, layout, messageTv);
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String query) {
-                onQueryFromSearchBar(query, layout, textView);
+                onQueryFromSearchBar(query, layout, messageTv);
                 return true;
             }
 
@@ -322,7 +324,7 @@ public class CharacterListActivity extends AppCompatActivity {
 
             ViewHolder(View view) {
                 super(view);
-                mIdView = (TextView) view.findViewById(R.id.id_text);
+                mIdView = (TextView) view.findViewById(R.id.character_name);
             }
         }
     }

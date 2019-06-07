@@ -20,12 +20,12 @@ android {
     productFlavors{
         simpsonsFlavor{
             buildConfigField("String","BASE_URL","\"https://api.duckduckgo.com\"")
-            applicationId "com.example.characterviewer.simpsonsFlavor"
+            applicationId "com.sample.simpsonsviewer"
 
         }
         wireFlavor{
             buildConfigField("String","BASE_URL","\"https://api.duckduckgo.com\"")
-            applicationId "com.example.characterviewer.wireFlavor"
+            applicationId "com.sample.wireviewer"
 
         }
     }

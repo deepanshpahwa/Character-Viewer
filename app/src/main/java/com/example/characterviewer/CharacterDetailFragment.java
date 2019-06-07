@@ -35,7 +35,7 @@ public class CharacterDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments().containsKey(ARG_ID)) {
+        if (getArguments() != null && getArguments().containsKey(ARG_ID)) {
 
             int position = getArguments().getInt(ARG_ID);
             List<RelatedTopic> filteredCharacterList = Utils.getFilteredCharacterList();//fetching the filtered data set
@@ -76,8 +76,7 @@ public class CharacterDetailFragment extends Fragment {
         }
 
         if (character != null) {
-            ((TextView) rootView.findViewById(R.id.character_detail)).setText(Utils.parseCharacterDescription(character.getText()));
-
+            ((TextView) rootView.findViewById(R.id.character_detail_description)).setText(Utils.parseCharacterDescription(character.getText()));
             ImageView imageView = rootView.findViewById(R.id.character_detail_image);
             String url;
 
