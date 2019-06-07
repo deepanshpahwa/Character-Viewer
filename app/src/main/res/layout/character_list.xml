@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/searchTv"
+        android:hint="@string/search_hint"
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/app_name"
+        android:textAppearance="?attr/textAppearanceListItem"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:weightSum="100"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/messageTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:gravity="top|end"
+            android:layout_weight="50"
+            android:textAlignment="center"
+            android:text="@string/empty_result_list_text"
+            android:textSize="36sp"
+            />
+
+        <ImageView
+            android:id="@+id/searchIv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="top"
+            android:layout_weight="50"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            android:src="@drawable/ic_search"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/character_list"
+        android:name="com.example.characterviewer.ItemListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".CharacterListActivity"
+        tools:listitem="@layout/character_list_content"
+        android:visibility="visible"/>
+
+</LinearLayout>

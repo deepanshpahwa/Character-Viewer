@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CharacterViewer</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="wire_flavor">wireFlavor</string>
+    <string name="simpsons_flavor">simpsonsFlavor</string>
+    <string name="search_hint">Enter Character Name</string>
+    <string name="empty_result_list_text">Sorry! No Character named </string>
+</resources>
